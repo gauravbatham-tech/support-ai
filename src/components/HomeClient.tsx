@@ -116,8 +116,8 @@ const HomeClient = ({ email }: { email: string }) => {
             <div className='mt-10 flex gap-4'>
 
               {email ? <button className='px-7 py-3 rounded-xl bg-black text-white font-medium
-            hover: bg-zinc-800 transition disabled:opacity-60' onClick={() => navigate.push('/dashboard')}>Go to Dashboard</button> : <button className='px-7 py-3 rounded-xl bg-black text-white font-medium
-            hover: bg-zinc-800 transition disabled:opacity-60'
+            hover:bg-zinc-800 transition disabled:opacity-60' onClick={() => navigate.push('/dashboard')}>Go to Dashboard</button> : <button className='px-7 py-3 rounded-xl bg-black text-white font-medium
+            hover:bg-zinc-800 transition disabled:opacity-60'
                 onClick={handleLogin}>
                 Get Started
               </button>}

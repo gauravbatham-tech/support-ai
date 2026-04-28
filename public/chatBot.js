@@ -1,7 +1,7 @@
 (function () {
     const api_Url = "https://support-ai-eosin.vercel.app/api/chat"
     const scriptTag = document.currentScript;
-    const ownerId = script.getAttribute("data-owner-id")
+    const ownerId = scriptTag.getAttribute("data-owner-id")
 
     if (!ownerId) {
         console.log("owner id not found")

@@ -168,11 +168,25 @@
 
             const data = await response.json()
             messageArea.removeChild(typing)
-            addMessage(data || "something went wrong", "ai")
+
+            // Handle API error responses
+            if (!response.ok) {
+                addMessage(data?.message || "Server error. Please try again.", "ai")
+                return
+            }
+
+            // Handle successful response
+            if (data?.message) {
+                addMessage(data.message, "ai")
+            } else if (data) {
+                addMessage(data, "ai")
+            } else {
+                addMessage("No response received. Please try again.", "ai")
+            }
         } catch (error) {
             console.log(error)
             messageArea.removeChild(typing)
-            addMessage("something went wrong", "ai")
+            addMessage("Connection failed. Please check your internet and try again.", "ai")
         }
     }
 

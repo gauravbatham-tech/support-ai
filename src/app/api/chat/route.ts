@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
         });
 
         const response = NextResponse.json(res.text)
-        response.headers.set("Allow-Control-Allow-Origin", "*");
+        response.headers.set("Access-Control-Allow-Origin", "*");
         response.headers.set("Access-Control-Allow-Methods", "POST, OPTIONS");
         response.headers.set("Access-Control-Allow-Headers", "Content-Type");
         return response
@@ -66,7 +66,7 @@ export async function POST(req: NextRequest) {
 
     } catch (error) {
         const response = NextResponse.json({ message: `chat error: ${error}` }, { status: 500 })
-        response.headers.set("Allow-Control-Allow-Origin", "*");
+        response.headers.set("Access-Control-Allow-Origin", "*");
         response.headers.set("Access-Control-Allow-Methods", "POST, OPTIONS");
         response.headers.set("Access-Control-Allow-Headers", "Content-Type");
         return response
@@ -75,8 +75,8 @@ export async function POST(req: NextRequest) {
 
 export const OPTIONS = async () => {
     return NextResponse.json(null, {
-        status: 201, headers: {
-            "Allow-Control-Allow-Origin": "*",
+        status: 204, headers: {
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "POST, OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type"
         }

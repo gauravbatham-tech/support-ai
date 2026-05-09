@@ -49,7 +49,7 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
 
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50 text-slate-900'>
+    <div className='min-h-screen bg-linear-to-br from-slate-50 to-indigo-50 text-slate-900'>
       <motion.div
         initial={{ y: -50 }}
         animate={{ y: 0 }}
@@ -57,7 +57,7 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
 
         className='fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-indigo-200 shadow-lg'>
         <div className='max-w-7xl mx-auto px-6 h-16 flex items-center justify-between'>
-          <div className='text-xl font-bold bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent cursor-pointer' onClick={() => navigate.push("/")}>SupportWave</div>
+          <div className='text-xl font-bold bg-linear-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent cursor-pointer' onClick={() => navigate.push("/")}>SupportWave</div>
           <button className='px-4 py-2 rounded-lg border-2 border-indigo-300 text-indigo-600 text-sm font-medium hover:bg-indigo-50 transition' onClick={() => navigate.push("/embed")}>
             Embed ChatBot
           </button>
@@ -70,13 +70,13 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
         <motion.div className='w-full max-w-3xl card-premium p-10 border-indigo-100'
         >
           <div className='mb-10'>
-            <h1 className='text-3xl font-bold bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent'>ChatBot Settings</h1>
+            <h1 className='text-3xl font-bold bg-linear-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent'>ChatBot Settings</h1>
             <p className='text-slate-500 mt-2 text-lg'>Manage your AI chatbot and business details</p>
           </div>
 
           <div className='mb-10'>
             <h1 className='text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2'>
-              <span className='w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-pink-500 text-white flex items-center justify-center text-sm font-bold'>1</span>
+              <span className='w-8 h-8 rounded-lg bg-linear-to-br from-indigo-500 to-pink-500 text-white flex items-center justify-center text-sm font-bold'>1</span>
               Business Details
             </h1>
             <div className='space-y-4'>
@@ -91,7 +91,7 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
 
           <div className='mb-10'>
             <h1 className='text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2'>
-              <span className='w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-amber-500 text-white flex items-center justify-center text-sm font-bold'>2</span>
+              <span className='w-8 h-8 rounded-lg bg-linear-to-br from-pink-500 to-amber-500 text-white flex items-center justify-center text-sm font-bold'>2</span>
               Knowledge Base
             </h1>
             <p className='text-sm text-slate-600 mb-4 font-medium'>Add FAQs, policies, delivery info, refunds, etc.</p>

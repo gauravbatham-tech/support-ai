@@ -49,16 +49,16 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
 
 
   return (
-    <div className='min-h-screen bg-zinc-50 text-zinc-900'>
+    <div className='min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50 text-slate-900'>
       <motion.div
         initial={{ y: -50 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
 
-        className='fixed top-0 left-0 w-full z-50 bg-white/0 backdrop-blur-xl border-b border-zinc-200'>
+        className='fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-indigo-200 shadow-lg'>
         <div className='max-w-7xl mx-auto px-6 h-16 flex items-center justify-between'>
-          <div className='text-lg font-semibold tracking-tight' onClick={() => navigate.push("/")}>Support <span className='text-zinc-400'>AI</span></div>
-          <button className='px-4 py-2 rounded-lg border border-zinc-300 text-sm hover: bg-zinc-100 transition' onClick={() => navigate.push("/embed")}>
+          <div className='text-xl font-bold bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent cursor-pointer' onClick={() => navigate.push("/")}>SupportWave</div>
+          <button className='px-4 py-2 rounded-lg border-2 border-indigo-300 text-indigo-600 text-sm font-medium hover:bg-indigo-50 transition' onClick={() => navigate.push("/embed")}>
             Embed ChatBot
           </button>
 
@@ -67,20 +67,21 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
 
 // Main content area
       <div className='flex justify-center px-4 py-14 mt-20'>
-        <motion.div className='w-full max-w-3xl bg-white rounded-2xl shadow-xl p-10'
+        <motion.div className='w-full max-w-3xl card-premium p-10 border-indigo-100'
         >
           <div className='mb-10'>
-            <h1 className='text-2xl font-semibold'>ChatBot Settings</h1>
-            <p className='text-zinc-500 mt-1'>Manage your AI chatbot and business details</p>
+            <h1 className='text-3xl font-bold bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent'>ChatBot Settings</h1>
+            <p className='text-slate-500 mt-2 text-lg'>Manage your AI chatbot and business details</p>
           </div>
 
           <div className='mb-10'>
-            <h1 className='text-lg font-medium mb-4'>Business Details</h1>
+            <h1 className='text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2'>
+              <span className='w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-pink-500 text-white flex items-center justify-center text-sm font-bold'>1</span>
+              Business Details
+            </h1>
             <div className='space-y-4'>
-              <input type="text" className='w-full rounded-xl border border-zinc-300 px-4 py-3 text-sm
-  focus:outline-none focus:ring-2 focus:ring-black/80' placeholder='Business Name' value={businessName} onChange={(e) => setBusinessName(e.target.value)} />
-              <input type="text" className='w-full rounded-xl border border-zinc-300 px-4 py-3 text-sm
-  focus:outline-none focus:ring-2 focus:ring-black/80' placeholder='Support Email' value={supportEmail} onChange={(e) => setSupportEmail(e.target.value)} />
+              <input type="text" className='input-modern' placeholder='Business Name' value={businessName} onChange={(e) => setBusinessName(e.target.value)} />
+              <input type="text" className='input-modern' placeholder='Support Email' value={supportEmail} onChange={(e) => setSupportEmail(e.target.value)} />
             </div>
 
           </div>
@@ -89,11 +90,13 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
 
 
           <div className='mb-10'>
-            <h1 className='text-lg font-medium mb-4'>Knowledge Base</h1>
-            <p className='text-sm text-zinc-500 mb-4'>Add FAQs, policies, delivery info, refunds, etc.</p>
+            <h1 className='text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2'>
+              <span className='w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500 to-amber-500 text-white flex items-center justify-center text-sm font-bold'>2</span>
+              Knowledge Base
+            </h1>
+            <p className='text-sm text-slate-600 mb-4 font-medium'>Add FAQs, policies, delivery info, refunds, etc.</p>
             <div className='space-y-4'>
-              <textarea className='w-full h-54 rounded-xl border border-zinc-300 px-4 py-3 text-sm
-  focus:outline-none focus:ring-2 focus:ring-black/80' placeholder={`Example:
+              <textarea className='input-modern h-48 resize-none' placeholder={`Example:
   Refund Policy: 7 days return availaible
   Delivery time: 3-5 working days
   Cash on delivery available
@@ -108,18 +111,18 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
               whileTap={{ scale: 0.95 }}
               disabled={loading}
               onClick={handleSettings}
-              className='px-7 py-3 rounded-xl bg-black text-white text-sm font-medium hover:bg-zinc-800 transition disabled:opacity-60'
+              className='btn-primary'
             >
-              {loading ? "Saving..." : "Save"}
+              {loading ? "Saving..." : "Save Settings"}
 
             </motion.button>
 
             {saved && <motion.span
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
-              className='text-sm font-medium text-emerald-600'
+              className='text-sm font-medium text-emerald-600 flex items-center gap-2'
             >
-              Settings saved
+              <span>✓</span> Settings saved successfully
             </motion.span>}
 
           </div>

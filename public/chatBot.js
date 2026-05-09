@@ -66,6 +66,7 @@
         <div id="chat-messages" style = "
             flex: 1;
             padding: 12px;
+            background: #f9fafb;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
@@ -142,7 +143,7 @@
 
     sendBtn.onclick = async () => {
         const text = input.value.trim()
-        if (!text) return
+        if (!text) { return }
         addMessage(text, "user")
         input.value = ""
 

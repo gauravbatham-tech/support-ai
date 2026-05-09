@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
     try {
         const { message, ownerId } = await req.json()
         if (!message || !ownerId) {
-            return NextResponse.json({ message: "message and on=wnerId is required" }, { status: 400 })
+            return NextResponse.json({ message: "message and ownerId is required" }, { status: 400 })
         }
 
 
@@ -73,12 +73,13 @@ export async function POST(req: NextRequest) {
     }
 }
 
-export const OPTIONS = async () => {
-    return NextResponse.json(null, {
-        status: 204, headers: {
+export async function OPTIONS() {
+    return new NextResponse(null, {
+        status: 204,
+        headers: {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "POST, OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type"
-        }
-    })
+            "Access-Control-Allow-Headers": "Content-Type",
+        },
+    });
 } 

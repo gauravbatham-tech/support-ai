@@ -1,8 +1,8 @@
-SupportWave – AI Customer Support Platform
+## SupportWave – AI Customer Support Platform
 
 An AI-powered customer support platform that enables businesses to configure chatbots using their FAQs, policies, and business information, with an embeddable widget for external websites.
 
-Features
+## Features
 
 AI-generated customer support responses using Google Gemini API.
 
@@ -16,11 +16,11 @@ Secure authentication and session validation using Scalekit.
 
 MongoDB data persistence with Mongoose connection caching.
 
-Tech Stack
+## Tech Stack
 
 Next.js, React, TypeScript, MongoDB, Mongoose, Google Gemini API, Scalekit, Tailwind CSS, Motion, JavaScript.
 
-Getting Started
+## Getting Started
 
 git clone <YOUR_REPOSITORY_URL>
 cd <REPOSITORY_DIRECTORY>
